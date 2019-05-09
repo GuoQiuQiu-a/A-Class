@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+
+  <title>Title</title>
+  <!--语法： setInterval(function,时间,参数)-->
+            <!--setInterval(object,方法名，时间,参数)-->
+</head>
+<body>
+    <input type="button" id="my_input">
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+      var datetime = document.getElementById("my_input").value;
+      function timea(){
+        var time = new Date();
+        var hour = time.getHours();
+        var min = time.getMinutes();
+        var sec = time.getSeconds();
+
+        datetime = hour + ":" +min + ":" + sec ;
+
+        document.write(datetime);
+      }
+      setInterval(timea,1000);
+    </script>
+</body>
+</html>

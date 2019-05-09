@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/miao.min.css">
+</head>
+<body>
+      <div class="mp-content">
+        <ul class="itemlist border-list" id="anti-encrypt" >
+          <li class="mp-single-item" style="bottom: 0px; z-index: 1;">
+            <div class="item-info">
+              <img data-src="tata.jpg" class="item-logo" src="img/tata.jpg" style="display: inline;" width="120" height="60">
+              <h4 class="item-discount">秒杀价<em>3.8元</em>&nbsp; &nbsp; &nbsp;&nbsp;原价：98元</h4>
+              <h4 class="item-stitle">Tata-上品折扣1-5折 京10店配货</h4>
+              <p class="item-time" id="item-time">离开始: <span class="mp-remain-time"></span></p>
+              <p class="item-source"><span class="item-source-inner">上品折扣</span>    </p>
+              <span id="item-his-safe" class="item-his-safe" style="display:none;"></span>
+            </div>
+            <div class="item-pic">
+              <img class="load-bear" src="img/miao.jpg" style="display: inline;" width="440" height="180">
+            </div>
+            <a href="####" target="_blank" class="mp-item-link" id="mp-item-link" title="Tata-上品折扣1-5折 京10店配货"            data-click="{time:1414986097, item:'2839496677'}" onclick="buyItem();return false;"></a></li>
+        </ul>
+      </div>
+
+</body>
+      <script src="js/jquery-3.3.1.js"></script>
+      <script>
+        function aa(){
+          var  a = "2019/5/10 00:00:10";
+          //设置倒计时结束的时间
+          var  b = new Date(a).getTime();
+//          getTime()  返回值是毫秒
+//          console.log("b"+b);
+          var time = new Date();
+          //获取当前时间
+          var  c = time.getTime();
+//          console.log("a"+c);
+          var shijiancha = b-c;
+//          时间差
+//        console.log(shijiancha);
+          function timea (ss){
+            var day = parseInt(ss/(1000*60*60*24));
+            var hours = parseInt((ss%(1000*60*60*24))/(1000*60*60));
+            var minutes = parseInt((ss%(1000*60*60))/(1000*60));
+            var seconds = parseInt((ss%(1000*60))/1000);
+            return day + "天" + hours + "小时" + minutes +"分钟" +seconds +"秒"
+          }
+
+          $(".mp-remain-time").html( timea(shijiancha))
+
+        }
+       setInterval(aa,1000)
+
+      </script>
+</html>
